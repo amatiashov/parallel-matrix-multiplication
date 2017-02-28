@@ -41,10 +41,11 @@ class MatrixMultiplier {
      * @param col номер столбца
      */
     void calculateCell(int row, int col){
+        int sum = 0;
         if (resultMatrix != null)
-            for (int i = 0; i < A[0].length; i++){
-                resultMatrix[row][col] += A[row][i] * B[i][col];
-        }
+            for (int i = 0; i < A[0].length; i++)
+                sum += A[row][i] * B[i][col];
+        resultMatrix[row][col] = sum;
     }
 
     /**

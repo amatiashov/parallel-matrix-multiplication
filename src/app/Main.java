@@ -1,12 +1,13 @@
 package app;
 
 public class Main {
-    private final static int ROWS_FIRST_MATRIX = 10;                                        // число строк первой матрицы
-    private final static int COLS_FIRST_MATRIX = 10;                                        // число столбцов первой матрицы
-    private final static int ROWS_SECOND_MATRIX = COLS_FIRST_MATRIX;                        // число строк второй матрицы
-    private final static int COLS_SECOND_MATRIX = 10;                                       // число  столбцов второй матрицы
-    private final static int NUMBER_OF_THREAD = Runtime.getRuntime().availableProcessors(); // колчиство потоков для вычисления
-    private static ThreadMultiplier[] threads;                                              // массив потоков;
+    private final static int ROWS_FIRST_MATRIX = 2000;                                        // число строк первой матрицы
+    private final static int COLS_FIRST_MATRIX = 2000;                                        // число столбцов первой матрицы
+    private final static int ROWS_SECOND_MATRIX = COLS_FIRST_MATRIX;                          // число строк второй матрицы
+    private final static int COLS_SECOND_MATRIX = 2000;                                       // число  столбцов второй матрицы
+    //private final static int NUMBER_OF_THREAD = Runtime.getRuntime().availableProcessors(); // колчиство потоков для вычисления
+    private final static int NUMBER_OF_THREAD = 2;                                            // колчиство потоков для вычисления
+    private static ThreadMultiplier[] threads;                                                // массив потоков;
 
     public static void main(String[] args) throws InterruptedException {
         System.out.println("Number of thread: " + NUMBER_OF_THREAD);
