@@ -47,7 +47,7 @@ public class Main {
 
     private static int[][] genRandomMatrix(int row, int col){
         if (row <= 0 || col <= 0)
-            return null;
+            throw new IllegalArgumentException("row and col can't be <= 0");
         int[][] result = new int[row][col];
         for (int i = 0; i < row; i++)
             for (int j = 0; j < col; j++)
