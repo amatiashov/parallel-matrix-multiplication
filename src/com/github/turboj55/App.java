@@ -1,6 +1,6 @@
-package app;
+package com.github.turboj55;
 
-public class Main {
+public class App {
     private final static int ROWS_FIRST_MATRIX = 2000;                                        // число строк первой матрицы
     private final static int COLS_FIRST_MATRIX = 2000;                                        // число столбцов первой матрицы
     private final static int ROWS_SECOND_MATRIX = COLS_FIRST_MATRIX;                          // число строк второй матрицы

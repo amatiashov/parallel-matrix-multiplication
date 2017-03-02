@@ -1,4 +1,4 @@
-package app;
+package com.github.turboj55;
 
 class MatrixMultiplier {
 

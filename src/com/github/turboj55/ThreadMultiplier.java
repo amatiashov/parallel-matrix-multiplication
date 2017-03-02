@@ -1,4 +1,4 @@
-package app;
+package com.github.turboj55;
 
 public class ThreadMultiplier implements Runnable{
     private int startCell;
