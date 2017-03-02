@@ -32,11 +32,11 @@ public class Main {
 
 
         // вывод левой матрицы на экран
-        printMatrix(leftMatrix, "Left matrix:\n");
+        //printMatrix(leftMatrix, "Left matrix:\n");
         // вывод правой матрицы на экран
-        printMatrix(rightMatrix, "Right matrix:\n");
+        //printMatrix(rightMatrix, "Right matrix:\n");
         // вывод результата на экран
-        printMatrix(matrixMultiplier.getResultMatrix(), "\nResult Matrix:\n");
+        //printMatrix(matrixMultiplier.getResultMatrix(), "\nResult Matrix:\n");
 
         System.out.println("Checking in one thread ...");
         startTime = System.currentTimeMillis();
