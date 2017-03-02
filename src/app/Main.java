@@ -40,7 +40,9 @@ public class Main {
 
         System.out.println("Checking in one thread ...");
         startTime = System.currentTimeMillis();
-        checkResult(leftMatrix, rightMatrix, matrixMultiplier.getResultMatrix());
+        final boolean testResult = checkResult(leftMatrix, rightMatrix, matrixMultiplier.getResultMatrix());
+        final String result = testResult ? "Success": "Failed";
+        System.out.println("Result test: " + result);
         stopTime = System.currentTimeMillis();
         System.out.println("Elapsed time: " + (stopTime - startTime));
     }
@@ -94,19 +96,17 @@ public class Main {
      * @param rightMatrix   левая исходная матрица
      * @param resultMatrix  матрица, полученная при вычислении
      */
-    private static void checkResult(int[][] leftMatrix, int[][] rightMatrix, int[][] resultMatrix){
-        boolean testOK = true;
+    private static boolean checkResult(int[][] leftMatrix, int[][] rightMatrix, int[][] resultMatrix){
         for (int i = 0; i < resultMatrix.length; i++) {
             for (int j = 0; j < resultMatrix[0].length; j++) {
                 int sum = 0;
                 for (int k = 0; k < rightMatrix.length; k++)
                     sum += leftMatrix[i][k] * rightMatrix[k][j];
                 if (resultMatrix[i][j] != sum){
-                    testOK = false;
+                    return false;
                 }
             }
         }
-        String result = testOK ? "Success": "Failed";
-        System.out.println("Result test: " + result);
+        return true;
     }
 }
