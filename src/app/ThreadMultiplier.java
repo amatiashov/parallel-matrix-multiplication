@@ -13,7 +13,7 @@ public class ThreadMultiplier extends Thread{
      * @param matrixMultiplier      объект результирующей матрицы
      *
      */
-    ThreadMultiplier(int startCell, int stopCell, MatrixMultiplier matrixMultiplier) {
+    ThreadMultiplier(final int startCell, final int stopCell, final MatrixMultiplier matrixMultiplier) {
         this.startCell = startCell;
         this.stopCell = stopCell;
         this.matrixMultiplier = matrixMultiplier;

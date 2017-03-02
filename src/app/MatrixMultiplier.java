@@ -40,7 +40,7 @@ class MatrixMultiplier {
      * @param row номер строки
      * @param col номер столбца
      */
-    void calculateCell(int row, int col){
+    void calculateCell(final int row, final int col){
         int sum = 0;
         if (resultMatrix != null)
             for (int i = 0; i < A[0].length; i++)

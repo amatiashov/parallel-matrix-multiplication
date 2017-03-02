@@ -16,7 +16,7 @@ public class Main {
         System.out.println("Generate right matrix ...");
         int[][] rightMatrix = genRandomMatrix(ROWS_SECOND_MATRIX, COLS_SECOND_MATRIX);
 
-        MatrixMultiplier matrixMultiplier = new MatrixMultiplier(leftMatrix, rightMatrix);
+        final MatrixMultiplier matrixMultiplier = new MatrixMultiplier(leftMatrix, rightMatrix);
 
         generateThread(leftMatrix, rightMatrix, matrixMultiplier);
 
@@ -55,7 +55,7 @@ public class Main {
         return result;
     }
 
-    private static void printMatrix(int[][] matrix, String msg){
+    private static void printMatrix(final int[][] matrix, final String msg){
         if (matrix != null)
             System.out.println(msg);
             for (int[] line: matrix) {
