@@ -7,7 +7,7 @@ public class Main {
     private final static int COLS_SECOND_MATRIX = 2000;                                       // число  столбцов второй матрицы
     //private final static int NUMBER_OF_THREAD = Runtime.getRuntime().availableProcessors(); // колчиство потоков для вычисления
     private final static int NUMBER_OF_THREAD = 2;                                            // колчиство потоков для вычисления
-    private static ThreadMultiplier[] threads;                                                // массив потоков;
+    private static Thread[] threads;                                                          // массив потоков;
 
     public static void main(String[] args) throws InterruptedException {
         System.out.println("Number of thread: " + NUMBER_OF_THREAD);
@@ -22,10 +22,10 @@ public class Main {
 
         long startTime = System.currentTimeMillis();
         // запуск потоков
-        for(ThreadMultiplier thread: threads)
+        for(Thread thread: threads)
             thread.start();
         // ожидание заверешения работы всех потоков
-        for(ThreadMultiplier thread: threads)
+        for(Thread thread: threads)
             thread.join();
         long stopTime = System.currentTimeMillis();
         System.out.println("Elapsed time: " + (stopTime - startTime));
@@ -77,7 +77,7 @@ public class Main {
         // количество ячеек, приходяещихся на один поток
         int cellsForOneThread = (leftMatrix.length * rightMatrix[0].length) / NUMBER_OF_THREAD;
         // массив потоков для вычисления
-        threads = new ThreadMultiplier[NUMBER_OF_THREAD];
+        threads = new Thread[NUMBER_OF_THREAD];
         // ячейка, с которой начианается вычисление
         int startCell = 0;
         // генерация потоков
@@ -85,7 +85,8 @@ public class Main {
             int stopCell = startCell + cellsForOneThread;
             if (i == NUMBER_OF_THREAD - 1)
                 stopCell = leftMatrix.length * rightMatrix[0].length;
-            threads[i] = new ThreadMultiplier(startCell, stopCell, matrixMultiplier);
+            Thread thread = new Thread(new ThreadMultiplier(startCell, stopCell, matrixMultiplier));
+            threads[i] = thread;
             startCell = stopCell;
         }
     }

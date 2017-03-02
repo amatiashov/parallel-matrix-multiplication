@@ -1,6 +1,6 @@
 package app;
 
-public class ThreadMultiplier extends Thread{
+public class ThreadMultiplier implements Runnable{
     private int startCell;
     private int stopCell;
     private int countColResultMatrix;           // число столбцов результирующей матрицы
